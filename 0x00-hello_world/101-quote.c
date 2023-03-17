@@ -1,11 +1,15 @@
-#include<stdio.h>
-#include<unstd.h>
+#include <stdio.h>
 /**
- * main - c progrm thats prints 
- * return: 1 (success)
+ * main - Entry point
+ *Return:1 (succes)
  */
 int main(void)
 {
-fputs("and that piece of art is useful\n" - Dora Korpar, 2015-10-19");
+int i;
+char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+for (i = 0; str[i] != '\0'; i++)
+{
+putchar(str[i]);
+}
 return (1);
-
+}
