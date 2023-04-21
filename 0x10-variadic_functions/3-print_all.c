@@ -11,9 +11,9 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	char *str, *tap = "";
 
-	va_list lst;
+	va_list lt;
 
-	va_start(lst, format);
+	va_start(lt, format);
 
 	if (format)
 	{
@@ -22,16 +22,16 @@ void print_all(const char * const format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					printf("%s%c", tap, va_arg(lst, int));
+					printf("%s%c", tap, va_arg(lt, int));
 					break;
 				case 'e':
-					printf("%s%d", tap, va_arg(lst, int));
+					printf("%s%d", tap, va_arg(lt, int));
 					break;
-				case 'i':
-					printf("%s%f", tap, va_arg(lst, double));
+				case 'f':
+					printf("%s%f", tap, va_arg(lt, double));
 					break;
 				case 's':
-					str = va_arg(lst, char *);
+					str = va_arg(lt, char *);
 					if (!str)
 						str = "(nil)";
 					printf("%s%s", tap, str);
@@ -42,11 +42,10 @@ void print_all(const char * const format, ...)
 			}
 			tap = ", ";
 			i++;
+
 		}
 	}
 
 	printf("\n");
-	va_end(lst);
+	va_end(lt);
 }
-
-
