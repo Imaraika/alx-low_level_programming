@@ -3,15 +3,11 @@
 #include "main.h"
 
 /**
-
-main - multiplies two numbers
-
-@argc: number of arguments
-
-@argv: array of arguments
-
-Return: 0 (Success), 1 (Error)
-*/
+ * main - multiplies two numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: 0 (Success), 1 (Error)
+ */
 
 int main(int argc, char *argv[])
 {
@@ -38,7 +34,7 @@ printf("Error: %s is not a valid integer\n", argv[2]);
 return (1);
 }
 
-result = num1 * num2;
+result = num1 *num2;
 
 printf("%d\n", result);
 
