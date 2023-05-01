@@ -27,7 +27,7 @@ size_t looped_listint_len(const listint_t *head)
 		if (tortoise == hare)
 		{
 			tortoise = tortoise->next;
-		       	while (tortoise != hare)
+			while (tortoise != hare)
 			{
 				nodes++;
 				tortoise = tortoise->next;
@@ -54,7 +54,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (nodes == 0)
 	{
-		/* Iterate through each node in the linked list until the head pointer is NULL */
+		/* Iterate through each node in the linked list */
 		for (nodes = 0; head != NULL; nodes++)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
