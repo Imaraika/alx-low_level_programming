@@ -11,26 +11,25 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
- list_t *new;
- unsigned int len = 0;
+	list_t *new;
 
-if (head == NULL)
-    return (NULL);
+	if (!head || !str)
+		return (NULL);
 
-new = calloc(1, sizeof(list_t));
-if (new == NULL)
-    return (NULL);
+	new = malloc(sizeof(list_t));
+	if (!new)
+		return (NULL);
 
-new->str = malloc(len + 1);
-if (new->str == NULL) {
-    free(new);
-    return (NULL);
-}
+	new->str = strdup(str);
+	if (!new->str)
+	{
+		free(new);
+		return (NULL);
+	}
 
-strncpy(new->str, str, len);
-new->len = len;
-new->next = *head;
+	new->len = strlen(str);
+	new->next = *head;
+	*head = new;
 
-*head = new;
-return (new);
+	return (new);
 }
