@@ -2,11 +2,14 @@
 #include <string.h>
 #include "main.h"
 
+#include "main.h"
+
 /**
- * array_range - creates an array of integers
- * @min: minimum range of values stored
- * @max: maximum range of values stored and number of elements
- * Return: pointer to the new array
+ * _realloc - reallocates a memory block using malloc and free
+ * @ptr: pointer to the memory previsouly allocated by malloc
+ * @old_size: size of the allocated memory for ptr
+ * @new_size: new size of the new memory block
+ * Return: pointer to the newly allocated memory block
  */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
@@ -19,6 +22,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		free(ptr);
 		return (NULL);
 	}
+
 	/* If ptr is NULL, equivalent to malloc(new_size) */
 	if (ptr == NULL)
 	{
@@ -45,5 +49,4 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	/* Free the old block */
 	free(ptr);
 	return (new_ptr);
-}`
-
+}
