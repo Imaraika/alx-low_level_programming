@@ -3,35 +3,34 @@
 #include "main.h"
 
 /**
- * *_memset - fills memory with a constant byte
- * @s: memory area to be filled
- * @b: char to copy
- * @n: number of times to copy b
- *
- * Return: pointer to the memory area s
+ * _calloc - allocates memory for an array
+ * @nmemb: number of elements in the array
+ * @size: size of each element
+ * Return: pointer to allocated memory
  */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-    void *ptr;
+	void *ptr;
 
-    /* Check for zero size or nmemb */
-    if (nmemb == 0 || size == 0) {
-        return NULL;
-    }
+	/* Check for zero size or nmemb */
+	if (nmemb == 0 || size == 0)
+	{
+		return (NULL);
+	}
 
-    /* Allocate memory using malloc */
-    ptr = malloc(nmemb * size);
+	/* Allocate memory using malloc */
+	ptr = malloc(nmemb * size);
 
-    /* Check if malloc failed */
-    if (ptr == NULL) {
-        return (NULL);
-    }
+	/* Check if malloc failed */
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
 
-    /* Zero out the memory using memset */
-    memset(ptr, 0, nmemb * size);
-
-    /* Return the pointer to the allocated memory */
-    return (ptr);
+	/* Zero out the memory using memset */
+	memset(ptr, 0, nmemb * size);
+	/* Return the pointer to the allocated memory */
+	return (ptr);
 }
 
